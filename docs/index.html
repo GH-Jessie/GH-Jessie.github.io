@@ -1,23 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<title>This is my Website</title>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MR3BVSCT');</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MR3BVSCT');</script>
+  <!-- End Google Tag Manager -->
+
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MR3BVSCT"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-<p>Below is content extracted from url:</p>
-
-<div>
-  <p>Key 1 value: <span id="key1_value"></span></p>
-  <p>Key 2 value: <span id="key2_value"></span></p>
-</div>
+  <div>
+    <p>Key 1 value: <span id="key1Value"></span></p>
+    <p>Key 2 value: <span id="key2Value"></span></p>
+  </div>
+  <script>
+    // Function to get the value of a URL parameter by its name
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+    // Get the values of key1 and key2 from the URL
+    const key1Value = getQueryParam('key1');
+    const key2Value = getQueryParam('key2');
+    // Display the values on the page
+    document.getElementById('key1Value').innerText = key1Value;
+    document.getElementById('key2Value').innerText = key2Value;
+  </script>
 
 </body>
 </html>
