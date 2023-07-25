@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Your other head elements here -->
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -11,19 +13,22 @@
 
 </head>
 <body>
+  <!-- Your page content here -->
+
+  <!-- Add the following section to display the extracted data -->
   <div>
     <p>Key 1 value: <span id="key1Value"></span></p>
     <p>Key 2 value: <span id="key2Value"></span></p>
   </div>
+
+  <!-- End of your page content -->
+
+  <!-- Add the following script at the end of the body -->
   <script>
-    // Function to get the value of a URL parameter by its name
-    function getQueryParam(name) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(name);
-    }
-    // Get the values of key1 and key2 from the URL
-    const key1Value = getQueryParam('key1');
-    const key2Value = getQueryParam('key2');
+    // Access the Data Layer variables
+    const key1Value = dataLayer[0]['key1_value'];
+    const key2Value = dataLayer[0]['key2_value'];
+
     // Display the values on the page
     document.getElementById('key1Value').innerText = key1Value;
     document.getElementById('key2Value').innerText = key2Value;
@@ -31,3 +36,4 @@
 
 </body>
 </html>
+
