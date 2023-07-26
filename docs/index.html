@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Your other head elements here -->
-
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,54 +11,29 @@
 
 </head>
 <body>
-  <!-- Your page content here -->
-
-  <!-- Add the following section to display the extracted data -->
   <div>
     <p>Key 1 value: <span id="key1Value"></span></p>
     <p>Key 2 value: <span id="key2Value"></span></p>
   </div>
 
-  <!-- End of your page content -->
-
-  <!-- Add the following script at the end of the body -->
   <script>
-    // Access the Data Layer variables
-    const key1Value = dataLayer[0]['key1_dl'];
-    const key2Value = dataLayer[0]['key2_dl'];
-
+    // Function to get the value of a URL parameter by its name
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+    // Get the values of key1 and key2 from the URL
+    const key1Value = getQueryParam('key1');
+    const key2Value = getQueryParam('key2');
     // Display the values on the page
     document.getElementById('key1Value').innerText = key1Value;
     document.getElementById('key2Value').innerText = key2Value;
   </script>
-
-
- <!--Assessment2 JS content -->
-<script type="text/javascript">
-  (function(a,b,c,d,e,f,g){
-    e['ire_o']=c;
-    e[c]=e[c]||function(){
-      (e[c].a=e[c].a||[]).push(arguments)
-    };
-    f=d.createElement(b);
-    g=d.getElementsByTagName(b)[0];
-    f.async=1;
-    f.src=a;
-    g.parentNode.insertBefore(f,g);
-  })('https://utt.impactcdn.com/A2061713-8c6d-4b06-b4c9-fcc4bf22bce365535.js','script','ire',document,window);
-
-  // Assuming you have created a Data Layer variable named 'key1Value' to extract the value of 'key1'
-  var key1Value = {{key1Value}}; // Replace 'key1Value' with the actual Data Layer variable name
-
-  // Assuming you have created a Data Layer variable named 'key2Value' to extract the value of 'key2'
-  var key2Value = {{key2Value}}; // Replace 'key2Value' with the actual Data Layer variable name
-
-  ire('identify', {
-    customerid: key1Value,
-    customeremail: key2Value
-  });
-</script>
-
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MR3BVSCT"
+   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
+
 
